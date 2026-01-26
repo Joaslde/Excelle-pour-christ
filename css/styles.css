@@ -15,8 +15,8 @@
   --border-light: rgba(255, 255, 255, 0.15);
 }
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Google Fonts - Montserrat UNIQUEMENT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
 
 /* Base Styles */
 * {
@@ -24,9 +24,21 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Empêcher le débordement horizontal global */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Correction spécifique pour les lignes Bootstrap qui débordent parfois */
+.row {
+  --bs-gutter-x: 1.5rem;
+  margin-right: 0;
+  margin-left: 0;
+}
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif !important;
   background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 50%, var(--secondary) 100%);
   color: var(--text-light);
   min-height: 100vh;
@@ -35,11 +47,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
   color: var(--text-white);
 }
 
 p {
+
   line-height: 1.8;
 }
 
@@ -185,6 +199,55 @@ p {
    Header / Navigation
    ======================================== */
 
+
+/* Hamburger Menu Animation */
+.navbar-toggler {
+  border: none;
+  padding: 0.5rem;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.hamburger {
+  position: relative;
+  width: 25px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .hamburger span:nth-child(3) {
+  transform: translateY(-8.5px) rotate(-45deg);
+}
+
+
+
+
 .navbar-custom {
   background: rgba(1, 28, 64, 0.98);
   backdrop-filter: blur(10px);
@@ -223,7 +286,7 @@ p {
 }
 
 .nav-link::after {
-  content: '';
+  /* content: '';
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -231,7 +294,8 @@ p {
   height: 2px;
   background: var(--primary);
   transition: all 0.3s ease;
-  transform: translateX(-50%);
+  transform: translateX(-50%); */
+  display: none;
 }
 
 .nav-link:hover::after {
@@ -264,14 +328,14 @@ p {
 }
 
 /* Dropdown Toggle Arrow */
-.dropdown-toggle::after {
+/* .dropdown-toggle::after {
   transition: transform 0.3s ease;
 }
 
 .dropdown.show .dropdown-toggle::after {
-  transform: rotate(180deg);
+  transform: rotate(180deg); 
 }
-
+/* Mobile Navigation */
 /* Mobile Navigation */
 @media (max-width: 991.98px) {
   .navbar-collapse {
@@ -286,11 +350,15 @@ p {
     gap: 0.25rem;
   }
   
-  .dropdown-menu {
+  /* FIX: Laisse Bootstrap gérer le dropdown */
+  .navbar-nav .dropdown-menu {
+    position: static !important;
+    transform: none !important;
     background: rgba(2, 31, 89, 0.95);
     border: none;
     margin-left: 1rem;
     box-shadow: none;
+    padding: 0.5rem 0;
   }
   
   .nav-link {
@@ -299,9 +367,14 @@ p {
   
   .dropdown-item {
     padding: 0.5rem 1rem;
+    color: var(--text-white);
+  }
+  
+  .dropdown-item:hover {
+    background: rgba(217, 170, 82, 0.2);
+    color: var(--primary);
   }
 }
-
 /* ========================================
    Buttons
    ======================================== */
@@ -731,7 +804,7 @@ p {
 }
 
 .verse-text {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   font-style: italic;
   line-height: 1.9;
@@ -778,8 +851,16 @@ p {
   display: block;
 }
 
+/* FIX: Select dropdown - une seule flèche */
 .form-select.form-control-custom {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23D9AA52' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  padding-right: 2.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 .form-check-input {
@@ -1055,6 +1136,14 @@ p {
   .social-icon i {
     font-size: 1rem;
   }
+
+  .rounded-circle2{
+    border-radius: 50%;
+    width: 65px;
+  }
+  .rounded-circle2 i {
+    margin-left: 5px;
+  }
 }
 
 /* ========================================
@@ -1097,3 +1186,4 @@ p {
 .blog-card .text-muted {
   color: rgba(255, 255, 255, 0.8) !important;
 }
+

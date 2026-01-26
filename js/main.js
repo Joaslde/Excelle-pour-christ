@@ -50,62 +50,18 @@ function initNavbar() {
 /* ========================================
    Dropdown Menus (Mobile Fix)
    ======================================== */
-function initDropdowns() {
-  // Ensure dropdowns work correctly on mobile
-  const dropdowns = document.querySelectorAll('.dropdown');
-  
-  dropdowns.forEach(dropdown => {
-    const toggle = dropdown.querySelector('.dropdown-toggle');
-    const menu = dropdown.querySelector('.dropdown-menu');
-    
-    if (!toggle || !menu) return;
-    
-    // For touch devices - enhance Bootstrap dropdown behavior
-    toggle.addEventListener('click', function(e) {
-      if (window.innerWidth <= 991) {
-        // Don't prevent default - let Bootstrap handle it
-        // Just add our custom mobile enhancements
-        
-        // Close other dropdowns after a small delay
-        setTimeout(() => {
-          dropdowns.forEach(d => {
-            if (d !== dropdown && !d.contains(e.target)) {
-              const bsDropdown = bootstrap.Dropdown.getInstance(d.querySelector('.dropdown-toggle'));
-              if (bsDropdown) {
-                bsDropdown.hide();
-              }
-            }
-          });
-        }, 10);
-      }
-    });
-  });
-  
-  // Make dropdown items navigable on mobile
-  document.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href !== '#') {
-        // On mobile, close the dropdown first then navigate
-        if (window.innerWidth <= 991) {
-          const dropdown = this.closest('.dropdown');
-          const bsDropdown = bootstrap.Dropdown.getInstance(dropdown.querySelector('.dropdown-toggle'));
-          if (bsDropdown) {
-            bsDropdown.hide();
-            setTimeout(() => {
-              window.location.href = href;
-            }, 150);
-          } else {
-            window.location.href = href;
-          }
-        } else {
-          window.location.href = href;
+   function initDropdowns() {
+    // Sur mobile, ferme la navbar après clic sur un lien
+    document.querySelectorAll('.dropdown-item, .nav-link:not(.dropdown-toggle)').forEach(link => {
+      link.addEventListener('click', function() {
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (window.innerWidth < 992 && navbarCollapse?.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+          bsCollapse?.hide();
         }
-      }
+      });
     });
-  });
-}
-
+  }
 /* ========================================
    Hero Carousel
    ======================================== */
