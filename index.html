@@ -76,53 +76,12 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="https://res.cloudinary.com/dmngvz0f4/image/upload/v1766769765/logo_f_rzbbkh.png" alt="Excelle pour Christ" height="50">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false">
-  <div class="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-          <li class="nav-item">
-            <a class="nav-link active" href="index.html">Accueil</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Qui sommes-nous <i class="bi bi-chevron-down ms-1"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="pages/about.html">Notre histoire</a></li>
-              <li><a class="dropdown-item" href="pages/founder.html">La Fondatrice</a></li>
-              <li><a class="dropdown-item" href="pages/about.html#values">Nos valeurs</a></li>
-              <li><a class="dropdown-item" href="pages/about.html#leaders">Collège des Serviteurs</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-              Enseignement   <i class="bi bi-chevron-down ms-1"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="pages/teachings.html">Enseignements</a></li>
-              <li><a class="dropdown-item" href="pages/teachings.html#ecole">École Tyrannus</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/donate.html">Faire un don</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/join.html">Nous rejoindre</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+    <div id="navbar"></div>
+    <script>
+        fetch("components/navbar.html")
+            .then(response => response.text())
+            .then(data => { document.getElementById('navbar').innerHTML = data; });
+    </script>
 
   <!-- Hero Section -->
   <section class="hero-section">
@@ -257,9 +216,17 @@
         <div class="col-md-6 col-lg-4">
           <div class="program-card animate-on-scroll" data-animation="fade-up" data-delay="0.15">
             <div class="program-day">Mardi</div>
-            <div class="program-activity">Cellule de maison</div>
-            <div class="program-time"><i class="bi bi-clock me-2"></i>19h00 - 20h30</div>
+            <div class="program-activity">Prière avec les commercants</div>
+            <div class="program-time"><i class="bi bi-clock me-2"></i>9h00 - 10h00</div>
             <p class="text-muted mt-2 mb-0 small">Communion fraternelle et partage</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="program-card animate-on-scroll" data-animation="fade-up" data-delay="0.15">
+            <div class="program-day">Mardi</div>
+            <div class="program-activity">Rencontre avec les nouveaux venus</div>
+            <div class="program-time"><i class="bi bi-clock me-2"></i>19h00 - 20h30</div>
+            <p class="text-muted mt-2 mb-0 small">Prise de contact avec les nouveaux venus</p>
           </div>
         </div>
         <div class="col-md-6 col-lg-4">
@@ -290,7 +257,7 @@
           <div class="program-card animate-on-scroll" data-animation="fade-up" data-delay="0.35">
             <div class="program-day">Dimanche</div>
             <div class="program-activity">Culte</div>
-            <div class="program-time"><i class="bi bi-clock me-2"></i>10h00 - 12h00</div>
+            <div class="program-time"><i class="bi bi-clock me-2"></i>09h00 - 11h00</div>
             <p class="text-muted mt-2 mb-0 small">Adoration, louange et enseignement</p>
           </div>
         </div>
@@ -394,128 +361,13 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer-custom">
-    <div class="container">
-      <!-- Ministry Cards -->
-      <div class="row g-4 mb-5">
-        <div class="col-md-6">
-          <div class="ministry-card animate-on-scroll" data-animation="fade-up">
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&q=80" alt="Chorale">
-            <div class="ministry-overlay">
-              <div class="ministry-icon">
-                <i class="bi bi-music-note-beamed"></i>
-              </div>
-              <div>
-                <h5 class="text-white mb-1">Rejoindre la Chorale</h5>
-                <p class="text-muted small mb-0">Servez Dieu par la louange et l'adoration</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="ministry-card animate-on-scroll" data-animation="fade-up" data-delay="0.1">
-            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80" alt="Accueil">
-            <div class="ministry-overlay">
-              <div class="ministry-icon">
-                <i class="bi bi-people"></i>
-              </div>
-              <div>
-                <h5 class="text-white mb-1">Rejoindre l'Accueil</h5>
-                <p class="text-muted small mb-0">Accueillez les visiteurs avec chaleur</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Footer Links -->
-      <div class="row g-4">
-        <div class="col-lg-4 mb-4">
-          <a href="index.html">
-            <img src="https://res.cloudinary.com/dmngvz0f4/image/upload/v1766769765/logo_f_rzbbkh.png" alt="Excelle pour Christ" height="60" class="mb-3">
-          </a>
-          <p class="text-muted small mb-4">Une œuvre de foi, un espace de prière, d'écoute et d'amour où chacun peut reprendre souffle.</p>
-          <div class="d-flex flex-column gap-2">
-            <span class="text-muted small"><i class="bi bi-geo-alt text-primary-gold me-2"></i>Fifadji, Cotonou, Bénin</span>
-            <span class="text-muted small"><i class="bi bi-telephone text-primary-gold me-2"></i>+229 01 96 81 64 96</span>
-            <span class="text-muted small"><i class="bi bi-envelope text-primary-gold me-2"></i>contact@excellepourchristinternational.org</span>
-          </div>
-        </div>
-        
-        <div class="col-6 col-lg-2">
-          <h6 class="footer-title">Navigation</h6>
-          <a href="index.html" class="footer-link">Accueil</a>
-          <a href="pages/about.html" class="footer-link">Qui sommes-nous</a>
-          <a href="pages/teachings.html" class="footer-link">Enseignement</a>
-          <a href="pages/donate.html" class="footer-link">Faire un don</a>
-          <a href="pages/join.html" class="footer-link">Nous rejoindre</a>
-        </div>
-        
-        <div class="col-6 col-lg-2">
-          <h6 class="footer-title">Ressources</h6>
-          <a href="#programmes" class="footer-link">Programmes</a>
-          <a href="#blog" class="footer-link">Blog</a>
-          <a href="pages/founder.html" class="footer-link">La Fondatrice</a>
-        </div>
-        
-        <div class="col-lg-4">
-          <h6 class="footer-title">Suivez-nous</h6>
-          <p class="text-muted small mb-3">Restez connectés avec notre communauté sur les réseaux sociaux.</p>
-          <div class="row g-2">
-            <div class="col-4">
-              <a href="https://www.facebook.com/share/1VrR133EKa/" class="social-icon" target="_blank">
-                <i class="bi bi-facebook"></i>
-                <span>Facebook</span>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="https://www.instagram.com/fondationexcelle" class="social-icon" target="_blank">
-                <i class="bi bi-instagram"></i>
-                <span>Instagram</span>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="https://www.youtube.com/@fondationexcelletv1104" class="social-icon" target="_blank">
-                <i class="bi bi-youtube"></i>
-                <span>YouTube</span>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="#" class="social-icon" target="_blank">
-                <i class="bi bi-tiktok"></i>
-                <span>TikTok</span>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="https://t.me/Yaniklevainqueur" class="social-icon" target="_blank">
-                <i class="bi bi-telegram"></i>
-                <span>Telegram</span>
-              </a>
-            </div>
-            <div class="col-4">
-              <a href="https://wa.me/22966265412" class="social-icon" target="_blank">
-                <i class="bi bi-whatsapp"></i>
-                <span>WhatsApp</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <hr class="my-4" style="border-color: var(--border-light);">
-      
-      <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-        <p class="text-muted small mb-0">
-          &copy; 2025 Excelle pour Christ International. Tous droits réservés.
-        </p>
-        <p class="text-muted small mb-0">
-          Fait avec <i class="bi bi-heart-fill text-primary-gold"></i> pour la gloire de Dieu
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Verse Modal -->
+  <div id="footer"></div>
+  <script>
+      fetch("components/footer.html")
+          .then(response => response.text())
+          .then(data => { document.getElementById('footer').innerHTML = data; });
+  </script>
+<!-- Verse Modal -->
   <div id="verseModal" class="verse-modal">
     <div class="verse-card">
       <button id="verseClose" class="verse-close" aria-label="Fermer">&times;</button>

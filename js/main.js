@@ -568,7 +568,7 @@ function initAllButtons() {
   // Ministry cards - make them clickable
   document.querySelectorAll('.ministry-card').forEach(card => {
     card.addEventListener('click', function() {
-      window.location.href = 'pages/join.html';
+      window.location.href = 'join.html';
     });
   });
   
