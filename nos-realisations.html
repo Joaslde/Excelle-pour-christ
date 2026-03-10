@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Base -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Title SEO -->
+    <title>Nos réalisations | Excelle pour Christ International</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="Découvrez les réalisations de la Fondation Excelle pour Christ : nos champs missionnaires à travers le pays et nos volets socio-économiques avec les centres Onésime, Mardochée et Tarma."
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="logo.png" type="image/png" />
+
+    <!-- CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+      .badge-mission {
+        background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+        color: #011c40;
+        padding: 0.6rem 1.2rem;
+        border-radius: 30px;
+        font-weight: 700;
+        font-family: "Montserrat", sans-serif;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 15px rgba(217, 170, 82, 0.4);
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .badge-mission:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(217, 170, 82, 0.6);
+        color: #011c40;
+      }
+      .social-center-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .social-center-list li {
+        padding: 1rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.1rem;
+      }
+      .social-center-list li:last-child {
+        border-bottom: none;
+      }
+      .social-center-icon {
+        color: var(--primary);
+        font-size: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <div id="navbar"></div>
+    <script>
+      fetch("components/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
+        });
+    </script>
+
+    <!-- Header Section -->
+    <section
+      class="py-5 position-relative overflow-hidden"
+      style="
+        margin-top: 80px;
+        background: linear-gradient(
+          135deg,
+          var(--secondary) 0%,
+          var(--secondary-light) 100%
+        );
+      "
+    >
+      <div class="bg-decoration bg-decoration-1"></div>
+      <div class="container py-5 text-center position-relative">
+        <div class="animate-on-scroll" data-animation="fade-up">
+          <h1 class="hero-title text-white mb-4">
+            Nos <span class="text-gradient-gold">Réalisations</span>
+          </h1>
+          <p class="section-subtitle mx-auto text-light">
+            Découvrez les fruits de notre engagement: l'expansion de notre œuvre
+            missionnaire et nos actions pour l'action sociale à travers la
+            nation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Champs Missionnaires -->
+    <section class="py-5 position-relative">
+      <div class="container py-5">
+        <div
+          class="text-center mb-5 animate-on-scroll"
+          data-animation="fade-up"
+        >
+          <i
+            class="bi bi-globe-americas text-primary-gold fs-1 mb-3 d-block"
+            style="color: var(--primary)"
+          ></i>
+          <h2 class="section-title">
+            Nos <span class="text-gradient-gold">Champs Missionnaires</span>
+          </h2>
+          <p class="section-subtitle">
+            Allez et faites de toutes les nations des disciples. Nous sommes
+            fiers de voir la lumière de Christ rayonner dans toutes ces régions
+            grâce à l'engagement de nos missionnaires.
+          </p>
+        </div>
+
+        <div
+          class="row pt-3 animate-on-scroll"
+          data-animation="fade-up"
+          data-delay="0.2"
+        >
+          <div class="col-12 text-center">
+            <div class="d-flex flex-wrap gap-3 justify-content-center">
+              <!-- Golden Badges List -->
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> ADJADJI BATA</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> ADJAGBO TANMEY</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> ANAGBO</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> ASSOULA</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> AZOVE</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> BEMBEREKE</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> COCOCODJI</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> COME</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> GOGOUNOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> IDIGNY</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> KABOLI</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> KETOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> MALANVILLE</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> MOUKOKOTAMOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> NATITINGOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> NIKKI</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> OKOUTA OSSE</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> OUESSENE</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> OUIDAH</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> PAHOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> PARAKOU</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> PK 10 / SEME</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> SIKKI</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> SOHOMEY</a
+              >
+              <a href="#" class="badge-mission"
+                ><i class="bi bi-pin-map-fill"></i> ZE</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Volet Social -->
+    <section class="py-5 position-relative overflow-hidden bg-secondary-light">
+      <div class="bg-decoration bg-decoration-2"></div>
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div
+            class="col-lg-6 mb-5 mb-lg-0 animate-on-scroll"
+            data-animation="fade-right"
+          >
+            <h2 class="section-title mb-4">
+              Notre <span class="text-gradient-gold">Volet Social</span>
+            </h2>
+            <p class="text-muted fs-5 mb-4">
+              L'impact de l'Évangile doit être visible par l'amour en action.
+              Au-delà de nos églises, la Fondation Excelle a structuré des
+              centres dédiés à l'action socio-économique et l'aide aux démunis
+              parce qu'une foi vivante se dote d'œuvres qui soulagent la
+              souffrance.
+            </p>
+            <div
+              class="card-custom p-4 border-start border-gold border-4 bg-secondary"
+            >
+              <ul class="social-center-list">
+                <li>
+                  <i class="bi bi-heart-pulse-fill social-center-icon"></i>
+                  <span class="text-white">Centre Onésime</span>
+                </li>
+                <li>
+                  <i class="bi bi-house-heart-fill social-center-icon"></i>
+                  <span class="text-white">Centre Mardochée (Mardochais)</span>
+                </li>
+                <li>
+                  <i class="bi bi-shield-shaded social-center-icon"></i>
+                  <span class="text-white">Centre Tarma</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="col-lg-6 text-center animate-on-scroll"
+            data-animation="fade-left"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1593113589914-07553f1cbc15?w=800&q=80"
+              alt="Action Sociale"
+              class="img-fluid rounded-4 shadow-lg border-gold"
+              style="
+                border: 3px solid var(--primary);
+                max-height: 450px;
+                object-fit: cover;
+              "
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+    <script>
+      fetch("components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
