@@ -12,7 +12,50 @@ document.addEventListener('DOMContentLoaded', function() {
   initDonation();
   initSmoothScroll();
   initAllButtons();
+  initEventStatusBadges();
 });
+
+/* ========================================
+   Statut automatique des événements
+   ======================================== */
+// Sur chaque badge, mettre data-start="AAAA-MM-JJ" et, si l'événement
+// dure plusieurs jours, data-end="AAAA-MM-JJ". Le badge affichera
+// automatiquement "À venir", "En cours" ou "Terminé" selon la date du jour.
+function initEventStatusBadges() {
+  const badges = document.querySelectorAll('[data-event-start]');
+
+  if (badges.length === 0) return;
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  badges.forEach(badge => {
+    const startStr = badge.dataset.eventStart;
+    const endStr = badge.dataset.eventEnd || startStr;
+
+    const start = new Date(startStr + 'T00:00:00');
+    const end = new Date(endStr + 'T00:00:00');
+
+    let status;
+    if (today < start) {
+      status = 'avenir';
+    } else if (today > end) {
+      status = 'termine';
+    } else {
+      status = 'encours';
+    }
+
+    const labels = {
+      avenir: 'À venir',
+      encours: 'En cours',
+      termine: 'Terminé'
+    };
+
+    badge.classList.remove('badge-avenir', 'badge-encours', 'badge-termine');
+    badge.classList.add(`badge-${status}`);
+    badge.textContent = labels[status];
+  });
+}
 
 /* ========================================
    Navbar
