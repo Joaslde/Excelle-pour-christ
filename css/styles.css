@@ -15,8 +15,8 @@
   --border-light: rgba(255, 255, 255, 0.15);
 }
 
-/* Google Fonts - Montserrat UNIQUEMENT */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* Base Styles */
 * {
@@ -36,8 +36,9 @@ html, body {
   margin-right: 0;
   margin-left: 0;
 }
- p, a, li,  textarea, button {
-  font-family: 'Playfair Display', sans-serif !important;
+/* corrige police fantôme */
+p, a, li, textarea, button {
+  font-family: 'Inter', sans-serif;
 }
 
 body {
